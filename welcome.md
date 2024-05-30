@@ -310,4 +310,4 @@ curl -X GET "https://swap-api.xyz/aggregators/1"
 
 ## Contact and Support
 
-For any issues, questions, or support, please reach out to our support team on [https://t.me/ConveyorLabs](Telegram).
+For any issues, questions, or support, please reach out to our support team on [Telegram](https://t.me/ConveyorLabs).
