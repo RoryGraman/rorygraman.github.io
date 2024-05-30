@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770045991488">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.770348085365">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Welcome</title>
-    <meta name="title" content="Welcome">
-    <meta name="description" content="this is a test">
+    <title>Swap API Documentation</title>
+    <meta name="title" content="Swap API Documentation">
+    <meta name="description" content="Welcome to the Swap API documentation! This guide provides detailed instructions on using our API for seamless token swaps.">
 
     <!-- Canonical -->
     <link rel="canonical" href="/">
@@ -19,22 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="/">
-    <meta property="og:title" content="Welcome">
-    <meta property="og:description" content="this is a test">
+    <meta property="og:title" content="Swap API Documentation">
+    <meta property="og:description" content="Welcome to the Swap API documentation! This guide provides detailed instructions on using our API for seamless token swaps.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="/">
-    <meta property="twitter:title" content="Welcome">
-    <meta property="twitter:description" content="this is a test">
+    <meta property="twitter:title" content="Swap API Documentation">
+    <meta property="twitter:description" content="Welcome to the Swap API documentation! This guide provides detailed instructions on using our API for seamless token swaps.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.5.0.770045991488" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.5.0.770348085365" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.770045991488" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.5.0.770348085365" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.770045991488" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.5.0.770348085365" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="resources/js/prism.js?v=3.5.0.770348085365" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -163,13 +164,389 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="welcome" class="break-words">
+<doc-anchor-target id="swap-api-documentation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#welcome">#</doc-anchor-trigger>
-        <span>Welcome</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#swap-api-documentation">#</doc-anchor-trigger>
+        <span>Swap API Documentation</span>
     </h1>
 </doc-anchor-target>
-<p>this is a test</p>
+<p>Welcome to the Swap API documentation! This guide provides detailed instructions on using our API for seamless token swaps. This documentation covers the <code v-pre>/quote</code>, <code v-pre>/swap</code>, <code v-pre>/sources</code>, and <code v-pre>/aggregators</code> endpoints, including their parameters, usage, and examples.</p>
+<doc-anchor-target id="table-of-contents">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#table-of-contents">#</doc-anchor-trigger>
+        <span>Table of Contents</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li><doc-anchor-trigger to="#overview">Overview</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#endpoints">Endpoints</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#quote">/quote</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#swap">/swap</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#sources">/sources</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#aggregators">/aggregators</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#query-parameters">Query Parameters</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#required-parameters">Required Parameters</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#optional-parameters">Optional Parameters</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#example-requests">Example Requests</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#error-handling">Error Handling</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#contact-and-support">Contact and Support</doc-anchor-trigger></li>
+</ol>
+<doc-anchor-target id="overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#overview">#</doc-anchor-trigger>
+        <span>Overview</span>
+    </h2>
+</doc-anchor-target>
+<p>The Swap API provides a set of endpoints to interact with various decentralized exchanges (DEXs) and protocols, enabling seamless token swaps. This documentation focuses on the <code v-pre>/quote</code> and <code v-pre>/swap</code> endpoints, which provide quotes and execution details for token swaps, respectively.</p>
+<doc-anchor-target id="endpoints">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#endpoints">#</doc-anchor-trigger>
+        <span>Endpoints</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="quote">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quote">#</doc-anchor-trigger>
+        <span>/quote</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Endpoint:</strong> <code v-pre>GET https://swap-api.xyz/quote</code></p>
+<p><strong>Description:</strong> This endpoint provides a quote for a token swap, fetching the optimal route for the given parameters.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code v-pre>tokenIn</code> (required): The ERC20 token address of the token you want to sell.</li>
+<li><code v-pre>tokenOut</code> (required): The ERC20 token address of the token you want to receive.</li>
+<li><code v-pre>amountIn</code> (required): The amount of <code v-pre>tokenIn</code> tokens to swap (in base units).</li>
+<li><code v-pre>slippage</code> (required): The maximum acceptable slippage percentage.</li>
+<li><code v-pre>chainId</code> (required): The chain ID of the blockchain network.</li>
+<li><code v-pre>recipient</code> (required): The address that will receive the swapped tokens.</li>
+<li><code v-pre>includeProtocols</code> (optional): A comma-separated list of protocols to include.</li>
+<li><code v-pre>excludeProtocols</code> (optional): A comma-separated list of protocols to exclude.</li>
+<li><code v-pre>fromTokenDecimals</code> (optional): The decimal places for the <code v-pre>tokenIn</code> token.</li>
+<li><code v-pre>toTokenDecimals</code> (optional): The decimal places for the <code v-pre>tokenOut</code> token.</li>
+<li><code v-pre>includeAggregator</code> (optional): Include specific aggregators.</li>
+<li><code v-pre>excludeAggregator</code> (optional): Exclude specific aggregators.</li>
+</ul>
+<doc-anchor-target id="swap">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#swap">#</doc-anchor-trigger>
+        <span>/swap</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Endpoint:</strong> <code v-pre>GET https://swap-api.xyz/swap/[aggregator]</code></p>
+<p><strong>Description:</strong> This endpoint provides the necessary data to execute a token swap using a specific aggregator. This endpoint retrieves the optimal swap route, including details such as the recipient address, the amount of gas required, and the data needed to perform the swap transaction.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code v-pre>aggregator</code> (path, required): The name of the aggregator to use for the swap. Example values include <code v-pre>1inch</code>, <code v-pre>paraswap</code>, <code v-pre>odos</code>, etc.</li>
+<li><code v-pre>tokenIn</code> (required): The address of the token to swap from.</li>
+<li><code v-pre>tokenOut</code> (required): The address of the token to swap to.</li>
+<li><code v-pre>slippage</code> (required): Acceptable slippage percentage. Example: <code v-pre>1.0</code> for 1%.</li>
+<li><code v-pre>amountIn</code> (required): The amount of <code v-pre>tokenIn</code> to swap.</li>
+<li><code v-pre>chainId</code> (required): The ID of the blockchain network. Example: <code v-pre>1</code> for Ethereum mainnet.</li>
+<li><code v-pre>recipient</code> (required): The address that will receive the tokens.</li>
+<li><code v-pre>includeProtocols</code> (optional): Comma-separated list of protocols to include in the swap.</li>
+<li><code v-pre>excludeProtocols</code> (optional): Comma-separated list of protocols to exclude from the swap.</li>
+<li><code v-pre>fromTokenDecimals</code> (optional): Number of decimals for the input token.</li>
+<li><code v-pre>toTokenDecimals</code> (optional): Number of decimals for the output token.</li>
+</ul>
+<doc-anchor-target id="sources">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sources">#</doc-anchor-trigger>
+        <span>/sources</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Endpoint:</strong> <code v-pre>GET https://swap-api.xyz/sources/{chainId}</code></p>
+<p><strong>Description:</strong> This endpoint retrieves a list of available sources for a given blockchain network.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code v-pre>chainId</code> (path, required): The ID of the blockchain network. Example: <code v-pre>1</code> for Ethereum mainnet.</li>
+</ul>
+<doc-anchor-target id="aggregators">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aggregators">#</doc-anchor-trigger>
+        <span>/aggregators</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Endpoint:</strong> <code v-pre>GET https://swap-api.xyz/aggregators/{chainId}</code></p>
+<p><strong>Description:</strong> This endpoint retrieves a list of available aggregators for a given blockchain network.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code v-pre>chainId</code> (path, required): The ID of the blockchain network. Example: <code v-pre>1</code> for Ethereum mainnet.</li>
+</ul>
+<doc-anchor-target id="query-parameters">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#query-parameters">#</doc-anchor-trigger>
+        <span>Query Parameters</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="required-parameters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#required-parameters">#</doc-anchor-trigger>
+        <span>Required Parameters</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>tokenIn</code> (required): The ERC20 token address of the token you want to sell.</li>
+<li><code v-pre>tokenOut</code> (required): The ERC20 token address of the token you want to receive.</li>
+<li><code v-pre>amountIn</code> (required): The amount of <code v-pre>tokenIn</code> tokens to swap (in base units).</li>
+<li><code v-pre>slippage</code> (required): The maximum acceptable slippage percentage.</li>
+<li><code v-pre>chainId</code> (required): The chain ID of the blockchain network.</li>
+<li><code v-pre>recipient</code> (required): The address that will receive the swapped tokens.</li>
+</ul>
+<doc-anchor-target id="optional-parameters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#optional-parameters">#</doc-anchor-trigger>
+        <span>Optional Parameters</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><code v-pre>includeProtocols</code>: A comma-separated list of protocols to include.</li>
+<li><code v-pre>excludeProtocols</code>: A comma-separated list of protocols to exclude.</li>
+<li><code v-pre>fromTokenDecimals</code>: The decimal places for the <code v-pre>tokenIn</code> token.</li>
+<li><code v-pre>toTokenDecimals</code>: The decimal places for the <code v-pre>tokenOut</code> token.</li>
+<li><code v-pre>includeAggregator</code>: Include specific aggregators.</li>
+<li><code v-pre>excludeAggregator</code>: Exclude specific aggregators.</li>
+</ul>
+<doc-anchor-target id="example-requests">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-requests">#</doc-anchor-trigger>
+        <span>Example Requests</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="example-1-basic-request">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1-basic-request">#</doc-anchor-trigger>
+        <span>Example 1: Basic Request</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Request:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl -X GET &quot;https://swap-api.xyz/quote?tokenIn=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&amp;tokenOut=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&amp;amountIn=1000000000000000000&amp;slippage=1&amp;chainId=1&amp;recipient=0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;</code></pre>
+</doc-codeblock></div>
+<p><strong>Response:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;best&quot;: {
+    &quot;aggregator&quot;: &quot;1inch&quot;,
+    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+    &quot;tokenOut&quot;: &quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;,
+    &quot;amountIn&quot;: &quot;1000000000000000000&quot;,
+    &quot;amountOut&quot;: &quot;37458266850&quot;,
+    &quot;gas&quot;: &quot;210000&quot;
+  },
+  &quot;1inch&quot;: {
+    &quot;aggregator&quot;: &quot;1inch&quot;,
+    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+    &quot;tokenOut&quot;: &quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;,
+    &quot;amountIn&quot;: &quot;1000000000000000000&quot;,
+    &quot;amountOut&quot;: &quot;37458266850&quot;,
+    &quot;gas&quot;: &quot;210000&quot;
+  },
+  &quot;Paraswap&quot;: {
+    &quot;aggregator&quot;: &quot;Paraswap&quot;,
+    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+    &quot;tokenOut&quot;: &quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;,
+    &quot;amountIn&quot;: &quot;1000000000000000000&quot;,
+    &quot;amountOut&quot;: &quot;37300000000&quot;,
+    &quot;gas&quot;: &quot;220000&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-2-including-specific-protocols">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2-including-specific-protocols">#</doc-anchor-trigger>
+        <span>Example 2: Including Specific Protocols</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Request:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl -X GET &quot;https://swap-api.xyz/quote?tokenIn=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&amp;tokenOut=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&amp;amountIn=1000000000000000000&amp;slippage=1&amp;chainId=1&amp;recipient=0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&amp;includeProtocols=uniswap-v2,sushiswap&quot;</code></pre>
+</doc-codeblock></div>
+<p><strong>Response:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;best&quot;: {
+    &quot;aggregator&quot;: &quot;1inch&quot;,
+    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+    &quot;tokenOut&quot;: &quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;,
+    &quot;amountIn&quot;: &quot;1000000000000000000&quot;,
+    &quot;amountOut&quot;: &quot;37458266850&quot;,
+    &quot;gas&quot;: &quot;210000&quot;
+  },
+  &quot;1inch&quot;: {
+    &quot;aggregator&quot;: &quot;1inch&quot;,
+    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+    &quot;tokenOut&quot;: &quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;,
+    &quot;amountIn&quot;: &quot;1000000000000000000&quot;,
+    &quot;amountOut&quot;: &quot;37458266850&quot;,
+    &quot;gas&quot;: &quot;210000&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-3-excluding-specific-protocols">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3-excluding-specific-protocols">#</doc-anchor-trigger>
+        <span>Example 3: Excluding Specific Protocols</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Request:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl -X GET &quot;https://swap-api.xyz/quote?tokenIn=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&amp;tokenOut=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&amp;amountIn=1000000000000000000&amp;slippage=1&amp;chainId=1&amp;recipient=0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&amp;excludeProtocols=uniswap-v3&quot;</code></pre>
+</doc-codeblock></div>
+<p><strong>Response:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;best&quot;: {
+    &quot;aggregator&quot;: &quot;Paraswap&quot;,
+    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+    &quot;tokenOut&quot;: &quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;,
+    &quot;amountIn&quot;: &quot;1000000000000000000&quot;,
+    &quot;amountOut&quot;: &quot;37300000000&quot;,
+    &quot;gas&quot;: &quot;220000&quot;
+  },
+  &quot;Paraswap&quot;: {
+    &quot;aggregator&quot;: &quot;Paraswap&quot;,
+    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+    &quot;tokenOut&quot;: &quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;,
+    &quot;amountIn&quot;: &quot;1000000000000000000&quot;,
+    &quot;amountOut&quot;: &quot;37300000000&quot;,
+    &quot;gas&quot;: &quot;220000&quot;
+  }
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="error-handling">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#error-handling">#</doc-anchor-trigger>
+        <span>Error Handling</span>
+    </h2>
+</doc-anchor-target>
+<p>The Swap API uses standard HTTP status codes to indicate the success or failure of an API request. Here are the most common status codes you may encounter:</p>
+<ul>
+<li><strong>200 OK</strong>: The request was successful.</li>
+<li><strong>400 Bad Request</strong>: The request was invalid. Check the error message for details.</li>
+<li><strong>401 Unauthorized</strong>: Authentication failed. Verify your API key.</li>
+<li><strong>500 Internal Server Error</strong>: An error occurred on the server. Try again later.</li>
+</ul>
+<doc-anchor-target id="example-error-response">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-error-response">#</doc-anchor-trigger>
+        <span>Example Error Response</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;error&quot;: &quot;Missing required query parameters: tokenIn, tokenOut, amountIn&quot;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-requests-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-requests-1">#</doc-anchor-trigger>
+        <span>Example Requests</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="example-1-basic-swap-request">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1-basic-swap-request">#</doc-anchor-trigger>
+        <span>Example 1: Basic Swap Request</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Request:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl -X GET &quot;https://swap-api.xyz/swap/odos?tokenIn=0x0000000000000000000000000000000000000000&amp;tokenOut=0xa0b86991c6218b36c1d19D4a2e9eb0ce3606eb48&amp;amountIn=100000000000000000&amp;slippage=1.0&amp;chainId=1&amp;recipient=0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;</code></pre>
+</doc-codeblock></div>
+<p><strong>Response:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;aggregator&quot;: &quot;odos&quot;,
+  &quot;from&quot;: &quot;0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;,
+  &quot;to&quot;: &quot;0xCf5540fFFCdC3d510B18bFcA6d2b9987b0772559&quot;,
+  &quot;value&quot;: &quot;100000000000000000&quot;,
+  &quot;data&quot;: &quot;0x3b635ce400000000000000000000000...&quot;,
+  &quot;gas&quot;: 130918,
+  &quot;chainId&quot;: &quot;1&quot;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="example-2-swap-request-with-included-protocols">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2-swap-request-with-included-protocols">#</doc-anchor-trigger>
+        <span>Example 2: Swap Request with Included Protocols</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Request:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl -X GET &quot;https://swap-api.xyz/swap/odos?tokenIn=0x0000000000000000000000000000000000000000&amp;tokenOut=0xa0b86991c6218b36c1d19D4a2e9eb0ce3606eb48&amp;amountIn=100000000000000000&amp;slippage=1.0&amp;chainId=1&amp;recipient=0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&amp;includeProtocols=uniswap-v2,sushiswap&quot;</code></pre>
+</doc-codeblock></div>
+<p><strong>Response:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;aggregator&quot;: &quot;odos&quot;,
+  &quot;from&quot;: &quot;0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;,
+  &quot;to&quot;: &quot;0xCf5540fFFCdC3d510B18bFcA6d2b9987b0772559&quot;,
+  &quot;value&quot;: &quot;100000000000000000&quot;,
+  &quot;data&quot;: &quot;0x3b635ce400000000000000000000000...&quot;
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="sources-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sources-1">#</doc-anchor-trigger>
+        <span>/sources</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="example-request">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-request">#</doc-anchor-trigger>
+        <span>Example Request</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Request:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl -X GET &quot;https://swap-api.xyz/sources/1&quot;</code></pre>
+</doc-codeblock></div>
+<p><strong>Response:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;chainId&quot;: &quot;1&quot;,
+  &quot;sources&quot;: [
+    &quot;aave&quot;, &quot;aave-v1&quot;, &quot;aave-v2&quot;, &quot;aave-v3&quot;, &quot;ambient&quot;, &quot;angle&quot;, &quot;angle-savings&quot;, &quot;angle-transmuter&quot;, &quot;apeswap&quot;, &quot;augustus-rfq&quot;, &quot;balancer&quot;, &quot;balancer-v1&quot;, &quot;balancer-v2&quot;, &quot;balancer-v2-composable-stable&quot;, &quot;balancer-v2-stable&quot;, &quot;balancer-v2-weighted&quot;, &quot;balancer-v2-wrapper&quot;, &quot;bamboodefi&quot;, &quot;bancor&quot;, &quot;bancor-v2&quot;, &quot;bancor-v3&quot;, &quot;bdai&quot;, &quot;beefy-finance&quot;, &quot;bgd-aave-static&quot;, &quot;blackholeswap&quot;, &quot;blueprint&quot;, &quot;blueprint-v3&quot;, &quot;bprotocol&quot;, &quot;button-wrappers&quot;, &quot;zeusswap&quot;, &quot;zk-bob&quot;, ...
+  ]
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="aggregators-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aggregators-1">#</doc-anchor-trigger>
+        <span>/aggregators</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="example-request-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-request-1">#</doc-anchor-trigger>
+        <span>Example Request</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Request:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">curl -X GET &quot;https://swap-api.xyz/aggregators/1&quot;</code></pre>
+</doc-codeblock></div>
+<p><strong>Response:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;chainId&quot;: &quot;1&quot;,
+  &quot;aggregators&quot;: [&quot;Paraswap&quot;, &quot;Kyber&quot;, &quot;1inch&quot;, &quot;0x&quot;, &quot;Odos&quot;]
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="contact-and-support">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contact-and-support">#</doc-anchor-trigger>
+        <span>Contact and Support</span>
+    </h2>
+</doc-anchor-target>
+<p>For any issues, questions, or support, please reach out to our support team on <a href="telegram">https://t.me/ConveyorLabs</a>.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -215,6 +592,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Welcome", isRoot: true, level: 0, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Swap API Documentation", isRoot: true, level: 0, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
