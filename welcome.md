@@ -45,6 +45,8 @@ The Swap API provides a set of endpoints to interact with various decentralized 
 - `toTokenDecimals` (optional): The decimal places for the `tokenOut` token.
 - `includeAggregator` (optional): Include specific aggregators.
 - `excludeAggregator` (optional): Exclude specific aggregators.
+- `zeroExApiKey` (optional): The api key for 0x to fetch a quote
+- `oneInchApiKey` (optional): The api key for 1inch to fetch a quote.
 
 ### /swap
 
@@ -65,6 +67,8 @@ The Swap API provides a set of endpoints to interact with various decentralized 
 - `excludeProtocols` (optional): Comma-separated list of protocols to exclude from the swap.
 - `fromTokenDecimals` (optional): Number of decimals for the input token.
 - `toTokenDecimals` (optional): Number of decimals for the output token.
+- `zeroExApiKey` (optional): The api key required to generate calldata when calling `/swap/0x`
+- `oneInchApiKey` (optional): The api key required to generate calldata when calling `/swap/1inch`.
 
 ### /sources
 
