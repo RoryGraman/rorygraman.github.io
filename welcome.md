@@ -2,7 +2,7 @@
 
 Welcome to the Swap API documentation! This guide provides detailed instructions on using our API for seamless token swaps. This documentation covers the `/quote`, `/swap`, `/sources`, and `/aggregators` endpoints, including their parameters, usage, and examples.
 
-View the [Swagger](https://app.swaggerhub.com/apis/swap-api-xyz/swap-api/1.0.0) docs.
+View the [Swagger](https://app.swaggerhub.com/apis-docs/swap-api-xyz/swap-api/1.0.0) docs.
 
 ## Table of Contents
 
