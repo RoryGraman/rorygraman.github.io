@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772811030296">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.772842474122">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>GET /aggregators/[chainId]</title>
-    <meta name="title" content="GET /aggregators/[chainId]">
-    <meta name="description" content="/aggregators/[chainId] requests can be called from any Quicknode endpoint enabled to use the API, regardless which chain/endpoint you have configured...">
+    <title>POST /swap</title>
+    <meta name="title" content="POST /swap">
+    <meta name="description" content="/swap requests should be called via the Quicknode endpoint you used to configure on each chain. Parameters are passed in via JSON.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://swap-api.xyz/quicknode-customers/aggregators/">
+    <link rel="canonical" href="https://swap-api.xyz/swap/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://swap-api.xyz/quicknode-customers/aggregators/">
-    <meta property="og:title" content="GET /aggregators/[chainId]">
-    <meta property="og:description" content="/aggregators/[chainId] requests can be called from any Quicknode endpoint enabled to use the API, regardless which chain/endpoint you have configured...">
+    <meta property="og:url" content="https://swap-api.xyz/swap/">
+    <meta property="og:title" content="POST /swap">
+    <meta property="og:description" content="/swap requests should be called via the Quicknode endpoint you used to configure on each chain. Parameters are passed in via JSON.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://swap-api.xyz/quicknode-customers/aggregators/">
-    <meta property="twitter:title" content="GET /aggregators/[chainId]">
-    <meta property="twitter:description" content="/aggregators/[chainId] requests can be called from any Quicknode endpoint enabled to use the API, regardless which chain/endpoint you have configured...">
+    <meta property="twitter:url" content="https://swap-api.xyz/swap/">
+    <meta property="twitter:title" content="POST /swap">
+    <meta property="twitter:description" content="/swap requests should be called via the Quicknode endpoint you used to configure on each chain. Parameters are passed in via JSON.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.772811030296" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.5.0.772842474122" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.772811030296" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.772811030296" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.772811030296" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.5.0.772842474122" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.5.0.772842474122" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.5.0.772842474122" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -50,9 +50,13 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                            <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../favicon.ico">
+                                <img class="max-h-10 hidden dark:inline-block" src="../favicon.ico">
+                            </span>
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Meta-Aggregator Swap API</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+                        </a>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -224,83 +228,17 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="get-aggregatorschainid" class="break-words">
+<doc-anchor-target id="post-swap" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#get-aggregatorschainid">#</doc-anchor-trigger>
-        <span>GET /aggregators/[chainId]</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#post-swap">#</doc-anchor-trigger>
+        <span>POST /swap</span>
     </h1>
 </doc-anchor-target>
-<p><code v-pre>/aggregators/[chainId]</code> requests can be called from any Quicknode endpoint enabled to use the API, regardless which chain/endpoint you have configured with the Meta-Aggregator Swap API. No json parameters are needed for this call.</p>
+<p><code v-pre>/swap</code> requests should be called via the Quicknode endpoint you used to configure on each chain. Parameters are passed in via JSON.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/aggregators/[chainId]</code></pre>
-</doc-codeblock></div>
-<p>Knowing which aggregators are available for each chain not only shows you all the supported Aggregators for each chain we support, it also allows you filter, or optionally only include specific aggregators for both <code v-pre>/quote</code> and <code v-pre>/swap</code> requests via <code v-pre>excludeAggregators</code>, or <code v-pre>includeAggregators</code></p>
-<doc-anchor-target id="usage">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
-        <span>Usage</span>
-    </h2>
-</doc-anchor-target>
-</br>
-</br>
-<doc-anchor-target id="includeaggregators">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#includeaggregators">#</doc-anchor-trigger>
-        <span><code v-pre>includeAggregators</code></span>
-    </h3>
-</doc-anchor-target>
-<p>When <code v-pre>includeAggregators</code> is used with <code v-pre>/quote</code>, it will <b>only</b> return responses for that particular protocol. For example, if you set <code v-pre>includeAggregators: &quot;Paraswap&quot;</code> in a <code v-pre>/quote</code> request, the API will only query Paraswap..</p>
-</br>
-</br>
-<doc-anchor-target id="excludeaggregators">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#excludeaggregators">#</doc-anchor-trigger>
-        <span><code v-pre>excludeAggregators</code></span>
-    </h3>
-</doc-anchor-target>
-<p>When <code v-pre>excludeAggregators</code> is used with <code v-pre>/quote</code>, it will return responses for every aggregator other than what was specified. For example, if you set <code v-pre>excludeAggregators: &quot;Parswap, OpenOcean&quot;</code> in a <code v-pre>/quote</code> request, it will filter out Paraswap and OpenOcean from being queried.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-red-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
-                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>if you use <code v-pre>excludeAggregators</code> in conjunction with the <code v-pre>/swap</code> endpoint, make sure you&#x27;re not excluding the Aggregator you specify in the <code v-pre>/swap/[aggregator]</code> endpoint, otherwise the API will fail to find any possible routes.</h5>
-        </div>
-    </div>
-</div>
-<doc-anchor-target id="example">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
-        <span>Example:</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="request">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#request">#</doc-anchor-trigger>
-        <span>Request</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">curl -X GET &quot;https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/aggregators/56&quot;</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="response">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#response">#</doc-anchor-trigger>
-        <span>Response</span>
-    </h3>
-</doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-  &quot;chainId&quot;: &quot;56&quot;,
-  &quot;aggregators&quot;: [&quot;Paraswap&quot;, &quot;Kyber&quot;, &quot;Odos&quot;, &quot;OpenOcean&quot;, &quot;1inch&quot;, &quot;0x&quot;]
-}</code></pre>
+<pre class="language-none"><code v-pre class="language-none">https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/swap
+or
+https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/swap/[aggregator]</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
@@ -315,7 +253,252 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>If you&#x27;d like support for a particular Aggregator, drop us a line on <a href="https://t.me/rorygraman">Telegram</a>, or if are part of an Aggregator team that would like to be integrated, submit a PR in our <a href="https://github.com/conveyorlabs/swap-api-aggregator-library">open-source</a> DEX aggregator library<span class="docs-emoji">&#x1F604;</span>.</h5>
+            <h5>Optionally you can append an aggregator name to the swap url in order to fetch calldata from an aggregator, eg <code v-pre>/swap/Paraswap</code> or <code v-pre>/swap/OpenOcean</code>. Note that when appending the aggregator name to the URL, it will override the <code v-pre>aggregator</code> parameter in the request body.</h5>
+        </div>
+    </div>
+</div>
+</br>
+</br>
+<doc-anchor-target id="usage">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#usage">#</doc-anchor-trigger>
+        <span>Usage</span>
+    </h2>
+</doc-anchor-target>
+</br>
+<doc-anchor-target id="required-parameters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#required-parameters">#</doc-anchor-trigger>
+        <span>Required Parameters</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Notes</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tokenIn</td>
+<td>The ERC20 token address of the token you want to sell.</td>
+<td>&quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;</td>
+</tr>
+<tr>
+<td>tokenOut</td>
+<td>The ERC20 token address of the token you want to receive.</td>
+<td>&quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;</td>
+</tr>
+<tr>
+<td>amountIn</td>
+<td>The amount of <code v-pre>tokenIn</code> tokens to swap (in base units).</td>
+<td>&quot;1000000000000000000&quot;</td>
+</tr>
+<tr>
+<td>slippage</td>
+<td>The maximum acceptable slippage percentage.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>chainId</td>
+<td>The chain ID of the blockchain network.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>recipient</td>
+<td>The address that will receive the swapped tokens.</td>
+<td>&quot;0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</br>
+</br>
+<doc-anchor-target id="optional-parameters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#optional-parameters">#</doc-anchor-trigger>
+        <span>Optional Parameters</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Notes</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aggregator</td>
+<td>Required if not used directly in URL. Having it in the URL overrides this value</td>
+<td>&quot;Paraswap&quot; or /swap/Paraswap</td>
+</tr>
+<tr>
+<td>includeProtocols</td>
+<td>A comma-separated list of protocols to include.</td>
+<td>&quot;uniswap-v2,sushiswap&quot;</td>
+</tr>
+<tr>
+<td>excludeProtocols</td>
+<td>A comma-separated list of protocols to exclude.</td>
+<td>&quot;uniswap-v3&quot;</td>
+</tr>
+<tr>
+<td>fromTokenDecimals</td>
+<td>The decimal places for the <code v-pre>tokenIn</code> token. Consumes Quicknode RPC credits if not included</td>
+<td>18</td>
+</tr>
+<tr>
+<td>toTokenDecimals</td>
+<td>The decimal places for the <code v-pre>tokenOut</code> token. Consumes Quicknode RPC credits if not included</td>
+<td>6</td>
+</tr>
+<tr>
+<td>zeroExApiKey</td>
+<td>A valid 0x API key is required in order to fetch from this source</td>
+<td>&quot;YOUR_0X_API_KEY&quot;</td>
+</tr>
+<tr>
+<td>oneInchApiKey</td>
+<td>A valid 1inch API key is required in order to fetch from this source</td>
+<td>&quot;YOUR_1INCH_API_KEY&quot;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>To request and receive responses from 0x and 1inch, you must pass in <code v-pre>zeroExApiKey</code> and/or <code v-pre>oneInchApiKey</code> parameters</h5>
+        </div>
+    </div>
+</div>
+</br>
+</br>
+<doc-anchor-target id="premium-optional-parameters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#premium-optional-parameters">#</doc-anchor-trigger>
+        <span>Premium (optional) Parameters</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>These parameters are a premium feature of the swap-api. Purchase a premium plan in order to set your own fee</h5>
+        </div>
+    </div>
+</div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Notes</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>odosReferralCode</td>
+<td>Referral code for Odos. Obtain a code <a href="https://referral.odos.xyz">here</a></td>
+<td>&quot;12345678&quot;</td>
+</tr>
+<tr>
+<td>partnerReferralWallet</td>
+<td>Wallet address for partner referral (premium only).</td>
+<td>&quot;0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;</td>
+</tr>
+<tr>
+<td>partnerReferralFeeBps</td>
+<td>Fee in basis points for partner referral (premium only).</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="example">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example:</span>
+    </h3>
+</doc-anchor-target>
+<p>Request</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">curl -X POST &quot;https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/swap&quot;
+-H &quot;Content-Type: application/json&quot;
+-d '{
+    &quot;aggregator&quot;: &quot;Paraswap&quot;,
+    &quot;tokenIn&quot;: &quot;0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&quot;,
+    &quot;tokenOut&quot;: &quot;0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&quot;,
+    &quot;amountIn&quot;: &quot;1000000000000000000&quot;,
+    &quot;slippage&quot;: 1,
+    &quot;chainId&quot;: 1,
+    &quot;recipient&quot;: &quot;0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;,
+    &quot;includeProtocols&quot;: &quot;uniswap-v2,sushiswap&quot;,
+    &quot;excludeProtocols&quot;: &quot;uniswap-v3&quot;,
+    &quot;fromTokenDecimals&quot;: 18,
+    &quot;toTokenDecimals&quot;: 6,
+}'</code></pre>
+</doc-codeblock></div>
+<p>Response</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;from&quot;: &quot;0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5&quot;,
+  &quot;to&quot;: &quot;0xDEF171Fe48CF0115B1d80b88dc8eAB59176FEe57&quot;,
+  &quot;value&quot;: &quot;1000000000000000000&quot;,
+  &quot;data&quot;: &quot;0x0b86a4c1000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee0000000000000000000000
+  000000000000000000000000000de0b6b3a764000000000000000000000000000000000000000000000000000000000000c670edf
+  8000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000000000000000000000
+  0000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000100000000000000000
+  0004de5b4e16d0168e52d35cacd2c6185b44281ec28c9dc&quot;,
+  &quot;chainId&quot;: 1,
+  &quot;aggregator&quot;: &quot;Paraswap&quot;
+}</code></pre>
+</doc-codeblock></div>
+</br>
+</br>
+<p>Calling the <code v-pre>/swap</code> endpoint with your desired parameters automatically standardizes and passes your parameters to the desired DEX aggregator and returns a response based on values from their native API.</p>
+<p><code v-pre>to</code> is the aggregator router </br>
+<code v-pre>from</code> is the wallet that the transaction is being signed from </br>
+<code v-pre>value</code> is the base unit amount in Ether that is being transacted (specifically for Eth -&gt; Token swaps)</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-red-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
+                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Make sure that the <code v-pre>from</code> address has approval to spend the <code v-pre>amountIn</code> for the <code v-pre>tokenIn</code> assets value for <code v-pre>Token -&gt; Token</code> and <code v-pre>Token -&gt; Eth</code> swaps otherwise the transaction will revert due to insufficient approval</h5>
         </div>
     </div>
 </div>
@@ -328,20 +511,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../quicknode-customers/swap/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../quote/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">POST /swap/[aggregator]</span>
+                                                <span class="block mt-1">POST /quote</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../quicknode-customers/sources/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../aggregators/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">GET /sources[chain​Id]</span>
+                                                <span class="block mt-1">GET /aggregators</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -385,6 +568,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "GET /aggregators/[chainId]", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "POST /swap", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
