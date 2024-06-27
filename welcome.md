@@ -5,6 +5,8 @@ The Meta-aggregator Swap API is an available as a [Quicknode](https://www.quickn
 !!!If you are not a Quicknode customer, refer [here](https://quicknode.com) to get started
 !!!
 
+Follow the steps below to get your endpoints configure
+
 1. Endpoints
    - [/quote](quote.md)
    - [/swap](swap.md)
