@@ -1,11 +1,20 @@
 input: .
 output: .retype
-url: # Add your website address here
+url: https://swap-api.xyz
 branding:
-  title: swap-api.xyz
+  title: Meta-Aggregator Swap API
   label: Docs
 links:
-- text: Getting Started
-  link: https://retype.com/guides/getting-started/
+- text: Open-Source Aggregator Library
+  link: https://github.com/conveyorlabs/swap-api-aggregator-library
+  icon: mark-github
+- text: Telegram
+  link: https://t.me/rorygraman
+  icon: bell-fill
+- text: X (Twitter)
+  link: https://twitter.com/ConveyorLabs
+- text: Discord
+  link: https://discord.gg/8kSRuySRUe
+  icon: comment-discussion
 footer:
   copyright: "&copy; Copyright {{ year }}. All rights reserved."
