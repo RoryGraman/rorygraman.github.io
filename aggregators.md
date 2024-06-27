@@ -1,45 +1,58 @@
 ---
 order: 700
+icon: terminal
 ---
 
-# GET /aggregators/[chainId]
+# GET /aggregators
 
-`/aggregators/[chainId]` requests can be called from any Quicknode endpoint enabled to use the API, regardless which chain/endpoint you have configured with the Meta-Aggregator Swap API. No json parameters are needed for this call.
+`/aggregators` requests can be called from any Quicknode endpoint enabled to use the API, and will automatically return a per-chain list of available aggregators based on the endpoint you are using in the URL
 
 ```
+https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/aggregators
+or
 https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/aggregators/[chainId]
 ```
 
+!!!Optionally you can append a chainId to the `/aggregator` url in order to fetch the list of aggregators per chain, eg `/aggregators/1` or `/aggregators/56`. Note that when appending the chainId to the URL, it will override the default chainId of the endpoint you are using.
+!!!
+
 Knowing which aggregators are available for each chain not only shows you all the supported Aggregators for each chain we support, it also allows you filter, or optionally only include specific aggregators for both `/quote` and `/swap` requests via `excludeAggregators`, or `includeAggregators`
+
+</br>
+</br>
 
 ## Usage
 
 </br>
-</br>
 
-### `includeAggregators`
+### includeAggregators
 
 When `includeAggregators` is used with `/quote`, it will <b>only</b> return responses for that particular protocol. For example, if you set `includeAggregators: "Paraswap"` in a `/quote` request, the API will only query Paraswap..
 
 </br>
 </br>
 
-### `excludeAggregators`
+### excludeAggregators
 
 When `excludeAggregators` is used with `/quote`, it will return responses for every aggregator other than what was specified. For example, if you set `excludeAggregators: "Parswap, OpenOcean"` in a `/quote` request, it will filter out Paraswap and OpenOcean from being queried.
 
 !!!danger if you use `excludeAggregators` in conjunction with the `/swap` endpoint, make sure you're not excluding the Aggregator you specify in the `/swap/[aggregator]` endpoint, otherwise the API will fail to find any possible routes.
 !!!
 
-## Example:
+</br>
+</br>
 
-### Request
+### Example:
+
+Request
 
 ```json
 curl -X GET "https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/aggregators/56"
+or
+curl -X GET "https://YOUR_BSC_QUICKNODE_ENDPOINT_HERE.com/addon/688/aggregators"
 ```
 
-### Response
+Response
 
 ```json
 {

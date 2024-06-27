@@ -1,42 +1,55 @@
 ---
 order: 700
+icon: terminal
 ---
 
-# GET /sources[chainId]
+# GET /sources
 
-`/sources/[chainId]` requests can be called from any Quicknode endpoint enabled to use the API, regardless which chain/endpoint you have configured with the Meta-Aggregator Swap API. No json parameters are needed for this call.
+`/sources` requests can be called from any Quicknode endpoint enabled to use the API, and will automatically return a per-chain list of available DEX's based on the endpoint you are using in the URL
 
 ```
+https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/sources
+or
 https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/sources/[chainId]
 ```
 
+!!!Optionally you can append a chainId to the `/sources` url in order to fetch the list of available DEX's per chain, eg `/sources/1` or `/sources/56`. Note that when appending the chainId to the URL, it will override the default chainId of the endpoint you are using.
+!!!
+
 Knowing which sources are available for each chain not only shows you all the available DEX's for all the available Aggregators we support, it also allows you filter, or optionally only include sources for both `/quote` and `/swap` requests via `excludeSources`, or `includeSources`
+
+</br>
+</br>
 
 ## Usage
 
 </br>
-</br>
 
-### `includeSources`
+### includeSources
 
 When `includeSources` is used with `/quote`or`/swap`, it will <b>only</b> return responses for that particular protocol. For example, if you set `includeSources: "uniswap-v3"` in a `/quote` or `/swap` request, the connected aggregators will only query Uniswap V3 pools for use in the swap.
 
 </br>
 </br>
 
-### `excludeSources`
+### excludeSources
 
 When `excludeSources` is used with `/quote`or`/swap`, it will return responses for every protocol <b>but</b> that pool type. For example, if you set `excludeSources: "uniswap-v3"` in a `/quote` or `/swap` request, it will filter out Uniswap V3 pools from the swap routes/calldata. Note that this doesn't eliminate Uniswap V2 forks, such as PancakeSwap V3, Sushiswap V3, or so on. Those pools will each have to be excluded as well.
 
-## Example:
+</br>
+</br>
 
-### Request
+### Example:
+
+Request
 
 ```json
 curl -X GET "https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/sources/56"
+or
+curl -X GET "https://YOUR_BSC_QUICKNODE_ENDPOINT_HERE.com/addon/688/sources"
 ```
 
-### Response
+Response
 
 ```json
 {

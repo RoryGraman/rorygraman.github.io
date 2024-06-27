@@ -3,7 +3,7 @@ output: .retype
 url: https://swap-api.xyz
 branding:
   title: Meta-Aggregator Swap API
-  label: Docs
+  logo: favicon.ico
 links:
 - text: Open-Source Aggregator Library
   link: https://github.com/conveyorlabs/swap-api-aggregator-library

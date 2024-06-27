@@ -1,5 +1,6 @@
 ---
 order: 900
+icon: terminal
 ---
 
 # POST /quote
@@ -10,7 +11,14 @@ order: 900
 https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/quote
 ```
 
-## Required Parameters
+</br>
+</br>
+
+## Usage
+
+</br>
+
+### Required Parameters
 
 | Parameter | Notes                                                     | Example                                      |
 | --------- | --------------------------------------------------------- | -------------------------------------------- |
@@ -21,23 +29,29 @@ https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/quote
 | chainId   | The chain ID of the blockchain network.                   | 1                                            |
 | recipient | The address that will receive the swapped tokens.         | "0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5" |
 
-## Optional Parameters
+</br>
+</br>
 
-| Parameter         | Notes                                           | Example                |
-| ----------------- | ----------------------------------------------- | ---------------------- |
-| includeProtocols  | A comma-separated list of protocols to include. | "uniswap-v2,sushiswap" |
-| excludeProtocols  | A comma-separated list of protocols to exclude. | "uniswap-v3"           |
-| fromTokenDecimals | The decimal places for the `tokenIn` token.     | 18                     |
-| toTokenDecimals   | The decimal places for the `tokenOut` token.    | 6                      |
-| includeAggregator | Include specific aggregators.                   | "1inch"                |
-| excludeAggregator | Exclude specific aggregators.                   | "paraswap"             |
-| zeroExApiKey      | The API key for 0x to fetch a quote.            | "YOUR_0X_API_KEY"      |
-| oneInchApiKey     | The API key for 1inch to fetch a quote.         | "YOUR_1INCH_API_KEY"   |
+### Optional Parameters
+
+| Parameter         | Notes                                                                | Example                |
+| ----------------- | -------------------------------------------------------------------- | ---------------------- |
+| includeProtocols  | A comma-separated list of protocols to include.                      | "uniswap-v2,sushiswap" |
+| excludeProtocols  | A comma-separated list of protocols to exclude.                      | "uniswap-v3"           |
+| fromTokenDecimals | The decimal places for the `tokenIn` token.                          | 18                     |
+| toTokenDecimals   | The decimal places for the `tokenOut` token.                         | 6                      |
+| includeAggregator | Include specific aggregators.                                        | "1inch"                |
+| excludeAggregator | Exclude specific aggregators.                                        | "paraswap"             |
+| zeroExApiKey      | A valid 0x API key is required in order to fetch from this source    | "YOUR_0X_API_KEY"      |
+| oneInchApiKey     | A valid 1inch API key is required in order to fetch from this source | "YOUR_1INCH_API_KEY"   |
 
 !!!To request and receive responses from 0x and 1inch, you must pass in `zeroExApiKey` and/or `oneInchApiKey` parameters
 !!!
 
-## Premium (optional) Parameters
+</br>
+</br>
+
+### Premium (optional) Parameters
 
 !!! These parameters are a premium feature of the swap-api. Purchase a premium plan in order to set your own fee
 !!!
@@ -48,9 +62,9 @@ https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/quote
 | partnerReferralWallet | Wallet address for partner referral (premium only).                     | "0x92977D2552f455Bb9A3457AEbfCb78f1256Dd2e5" |
 | partnerReferralFeeBps | Fee in basis points for partner referral (premium only).                | 50                                           |
 
-## Example:
+### Example:
 
-### Request
+Request
 
 ```json
 curl -X POST "https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/quote"
@@ -69,7 +83,7 @@ curl -X POST "https://YOUR_QUICKNODE_ENDPOINT_HERE.com/addon/688/quote"
 }'
 ```
 
-### Response
+Response
 
 ```json
 {
