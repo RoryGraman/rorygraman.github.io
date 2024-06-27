@@ -1,6 +1,6 @@
-<!-- ---
+---
 visibility: hidden
---- -->
+---
 
 # Swap API Documentation
 
